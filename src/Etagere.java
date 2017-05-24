@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * Created by tatane on 24/05/2017.
  */
-public class Etagere {
+public class Etagere implements Imprimable {
 
     
     ArrayList<Document> sesDocuments;
@@ -28,7 +28,7 @@ public class Etagere {
         {
             if(sesDocuments.get(i) instanceof Livre && ((Livre) sesDocuments.get(i)).auteur.equals(auteur))
             {
-                System.out.println(sesDocuments.get(i));
+                System.out.print(sesDocuments.get(i));
             }
         }
     }
@@ -51,6 +51,21 @@ public class Etagere {
             sesDocuments.set(i, sesDocuments.get(min));
             sesDocuments.set(min, D1);
         }
+    }
+
+    @Override
+    public void imprimer() {
+
+        System.out.print("\nImprime ...");
+        for (int i =0; i<sesDocuments.size(); i++)
+        {
+            if(sesDocuments.get(i) instanceof Livre)
+            {
+                System.out.print(sesDocuments.get(i));
+            }
+
+        }
+
     }
 
     @Override

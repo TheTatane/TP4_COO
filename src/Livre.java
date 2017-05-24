@@ -1,7 +1,7 @@
 /**
  * Created by tatane on 24/05/2017.
  */
-public abstract class Livre extends Document {
+public class Livre extends Document implements Imprimable {
 
     protected String auteur;
     protected int nbPages;
@@ -9,7 +9,7 @@ public abstract class Livre extends Document {
 
     public Livre(int num, String titre,String auteur, int nbPages)
     {
-        super(num,titre);
+        super(num, titre);
         this.auteur=auteur;
         this.nbPages=nbPages;
     }
@@ -23,10 +23,17 @@ public abstract class Livre extends Document {
     }
 
     @Override
+    public void imprimer() {
+
+    }
+
+    @Override
     public String toString() {
         return ""+super.toString()+"Livre{" +
                 "auteur='" + auteur + '\'' +
                 ", nbPages=" + nbPages +
                 '}';
     }
+
+
 }

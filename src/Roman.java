@@ -9,4 +9,16 @@ public class Roman extends Livre {
     {
         super(num, titre, auteur, nbPages);
     }
+
+    @Override
+    public void imprimer() {
+        System.out.println("Imprime ..."+this);
+    }
+
+    @Override
+    public String toString() {
+        return ""+super.toString()+" Roman{" +
+                "prixLitteraire='" + prixLitteraire + '\'' +
+                '}';
+    }
 }
