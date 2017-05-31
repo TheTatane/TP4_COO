@@ -15,9 +15,9 @@ public class Main {
         E1.ajouterDocument(R1);
         E1.ajouterDocument(D1);
 
-
         System.out.println(E1);
         E1.rechercher("Paolo");
+        System.out.println("\n\nOn trie");
         E1.triAlphabetique();
         System.out.println(E1);
 

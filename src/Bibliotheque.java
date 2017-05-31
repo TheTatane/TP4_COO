@@ -7,6 +7,11 @@ public class Bibliotheque {
 
     ArrayList<Etagere> sesEtageres;
 
+    /**
+     * Constructeur Bibliotheque
+     * Crée une instance de Bibliotheque
+     * Crée une ArrayList vide de type Etagere pour stocker les étagères
+     */
     public Bibliotheque()
     {
         sesEtageres=new ArrayList<Etagere>();

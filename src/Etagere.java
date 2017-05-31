@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by tatane on 24/05/2017.
@@ -9,11 +10,21 @@ public class Etagere implements Imprimable {
     ArrayList<Document> sesDocuments;
     private static int MAX_DOCS=20;
 
+    /**
+     * Constructeur Bibliotheque
+     * Crée une instance de Bibliotheque
+     * Crée une ArrayList vide de type Document pour stocker les documents
+     */
     public Etagere()
     {
         sesDocuments = new ArrayList<Document>();
     }
 
+    /**
+     * Procédure ajouterDocument
+     * Ajoute un document passé en paramètre s'il reste de la place dans l'étagère
+     * @param doc
+     */
     void ajouterDocument(Document doc)
     {
         if(sesDocuments.size()<MAX_DOCS)
@@ -22,6 +33,11 @@ public class Etagere implements Imprimable {
             System.out.println("Plus de place dans cette étagère");
     }
 
+    /**
+     * Procédure rechercher
+     * Recherche les documents de l'étagère ayant pour auteur le nom auteur passé en paramètre
+     * @param auteur
+     */
     public void rechercher(String auteur)
     {
         for (int i=0; i<sesDocuments.size();i++)
@@ -33,6 +49,8 @@ public class Etagere implements Imprimable {
         }
     }
 
+    // 1 ère version du Tri
+    /*
     public void triAlphabetique()
     {
         int min;
@@ -52,7 +70,22 @@ public class Etagere implements Imprimable {
             sesDocuments.set(min, D1);
         }
     }
+    */
 
+    /**
+     * Procédure triAlphabetique
+     * Tri la Collection de documents par ordre alphabétique en se basant sur le titre de chaque document
+     */
+    public void triAlphabetique()
+    {
+        Collections.sort(sesDocuments);
+    }
+
+
+    /**
+     * Procédure imprimer
+     * Affiche les livres imprimables présents dans l'étagère
+     */
     @Override
     public void imprimer() {
 
@@ -63,9 +96,7 @@ public class Etagere implements Imprimable {
             {
                 System.out.print(sesDocuments.get(i));
             }
-
         }
-
     }
 
     @Override
