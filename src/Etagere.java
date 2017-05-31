@@ -25,7 +25,7 @@ public class Etagere implements Imprimable {
      * Ajoute un document passé en paramètre s'il reste de la place dans l'étagère
      * @param doc
      */
-    void ajouterDocument(Document doc)
+    public void ajouterDocument(Document doc)
     {
         if(sesDocuments.size()<MAX_DOCS)
             sesDocuments.add(doc);
@@ -47,6 +47,7 @@ public class Etagere implements Imprimable {
                 System.out.print(sesDocuments.get(i));
             }
         }
+
     }
 
     // 1 ère version du Tri
@@ -99,10 +100,24 @@ public class Etagere implements Imprimable {
         }
     }
 
+    /**
+     * Fonction getTailleOccupé
+     * Permet de connaitre la taille occupée dans l'étagère
+     * @return la taille occupée par les documents présent dans l'étagère
+     */
+    public int getTailleOccupé()
+    {
+        return sesDocuments.size();
+    }
+
+
     @Override
     public String toString() {
         return "Etagere{" +
                 "sesDocuments=" + sesDocuments +
                 '}';
     }
+
+
+
 }
