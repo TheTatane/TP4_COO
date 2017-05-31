@@ -26,7 +26,7 @@ public abstract class Document implements Comparable<Document> {
      */
     public int compareTo (Document d)
     {
-        return titre.compareTo(d.getTitre());
+        return titre.compareToIgnoreCase(d.getTitre());
     }
 
     /**
